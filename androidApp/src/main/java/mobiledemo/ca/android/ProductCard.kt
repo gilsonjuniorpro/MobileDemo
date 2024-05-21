@@ -16,6 +16,7 @@ import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -29,14 +30,16 @@ import mobiledemo.ca.Product
 @Composable
 fun ProductCard(product: Product) {
     Surface(
-        color = MaterialTheme.colorScheme.surfaceColorAtElevation(2.dp),
+        //color = MaterialTheme.colorScheme.surfaceColorAtElevation(2.dp),
+        color = Color.LightGray,
         shape = RoundedCornerShape(size = 12.dp)
     ) {
         Column {
             AsyncImage(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(300.dp),
+                    .height(300.dp)
+                    .padding(8.dp),
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(product.image)
                     .crossfade(true)
